@@ -1,0 +1,37 @@
+from calibre.web.feeds.recipes import BasicNewsRecipe
+
+class React_Tutorial(BasicNewsRecipe):
+	# Book Name
+	title = 'React Tutorial'
+	#Description
+	description = 'The documation of React'
+	#Cover
+	cover_url = ''
+
+	url_prefix = 'https://facebook.github.io'
+	no_stylesheets = True
+	keep_only_tags = [{ 'class': 'inner-content' }]
+	
+	def get_chapters(self, link):
+		chapters = []
+		for li in link.findAll('li'):
+			til = li.a.string
+			url = self.url_prefix + li.a['href']
+			a = { 'title': til, 'url': url }
+			chapters.append(a)
+		return chapters
+
+	def parse_index(self):
+		soup = self.index_to_soup(self.url_prefix + '/react/tutorial/tutorial.html')
+
+		# navigation
+		navDocs = soup.find('div', {'class': 'nav-docs' })
+		
+		volumns = []
+		for volumn in navDocs.findAll('div', {'class': 'nav-docs-section'}):
+			volumnTitle = volumn.contents[1].string
+			chapters = self.get_chapters(volumn.ul)
+			volumns.append((volumnTitle, chapters))
+		
+		return volumns
+	
