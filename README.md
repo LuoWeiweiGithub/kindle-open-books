@@ -37,6 +37,7 @@ List of Recipes in `calibre-recipes` Folder
 + The_Definitive_Guide_to_Yii_2.0.recipe - [The Definitive Guide to Yii 2.0](http://www.yiiframework.com/doc-2.0/guide-index.html)
 + Tutorials_about_Development_for_Android.recipe - [Tutorials about Development for Android](http://www.vogella.com/tutorials/android.html)
 + React_DOC.recipe - [Doc of React](https://facebook.github.io/react/docs/hello-world.html)
++ React_Tutorial.recipe - [Tutorial about React](https://facebook.github.io/react/tutorial/tutorial.html)
 
 ## Simplified Chinese
 

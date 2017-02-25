@@ -7,6 +7,7 @@ class React_Tutorial(BasicNewsRecipe):
 	description = 'The documation of React'
 	#Cover
 	cover_url = ''
+	language = 'en'
 
 	url_prefix = 'https://facebook.github.io'
 	no_stylesheets = True
